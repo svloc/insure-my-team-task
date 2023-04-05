@@ -1,0 +1,16 @@
+.form_input {
+    border-radius: 2px;
+    padding: 0.45em 1em;
+    border: 1px solid transparent;
+    box-shadow: var(--box-shadow-input) !important;
+    transition: all 0.2s ease-out;
+    font-family: var(--font-mulish);
+    width: 100%;
+  }
+  
+  .form_input:focus-visible,
+  .form_input:focus {
+    outline: 0;
+    box-shadow: var(--box-shadow-input-focus) !important;
+  }
+
