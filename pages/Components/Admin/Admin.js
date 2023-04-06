@@ -1,4 +1,4 @@
 export default function Login() {
 
-    return<p>vkhdfkefdkndksnfsknfsekd</p>
+    return<p>Admin hai mai--</p>
 }

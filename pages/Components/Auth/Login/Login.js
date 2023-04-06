@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import { setAccount } from '../../../LocalStorage/Storage';
 import LoginImg from "../../../Assest/Images/Tools.svg";
 import Input from "../../../Centimeter/Input/Input";
 import Button from "../../../Centimeter/Button/Button";
@@ -14,6 +15,7 @@ export default function Login() {
     function handleChange(event) {
         setFormData({ ...formData, [event.target.name]: event.target.value });
     }
+
     function handleSubmit(event) {
         event.preventDefault();
         setFormError({});
@@ -26,7 +28,15 @@ export default function Login() {
             return;
         }
         if (!Object.keys(formError).length) {
-            router.push('/admin')
+            if(formData.username==='admin'){
+                setAccount('admin');
+            }else if(formData.username==='author'){
+                setAccount('author');
+            }else{
+                setAccount('user');
+            }
+            
+            router.push('/blog')
         }
     }
     return (
